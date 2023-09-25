@@ -9,8 +9,6 @@ import 'nprogress/nprogress.css';
 import ThemeProvider from 'src/theme/ThemeProvider';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
-import createEmotionCache from 'src/createEmotionCache';
-import { appWithTranslation } from 'next-i18next';
 import { SidebarProvider } from 'src/contexts/SidebarContext';
 import 'src/utils/chart';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -52,7 +50,7 @@ function MyApp(props: MyAppProps) {
         />
       </Head>
       <ReduxProvider store={store}>
-        {/* <SidebarProvider> */}
+        <SidebarProvider>
           <ThemeProvider>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <AuthProvider>
@@ -77,7 +75,7 @@ function MyApp(props: MyAppProps) {
               </AuthProvider>
             </LocalizationProvider>
           </ThemeProvider>
-        {/* </SidebarProvider> */}
+         </SidebarProvider> 
       </ReduxProvider>
     </CacheProvider>
   );
