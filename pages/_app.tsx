@@ -55,13 +55,6 @@ function MyApp(props: MyAppProps) {
           <ThemeProvider>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <AuthProvider>
-                <SnackbarProvider
-                  maxSnack={6}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right'
-                  }}
-                >
                   <CssBaseline />
                   <AuthConsumer>
                     {(auth) =>
@@ -72,7 +65,6 @@ function MyApp(props: MyAppProps) {
                       )
                     }
                   </AuthConsumer>
-                </SnackbarProvider>
               </AuthProvider>
             </LocalizationProvider>
           </ThemeProvider>
